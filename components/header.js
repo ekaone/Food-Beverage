@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core";
 
 const MenuItems = ({ children }) => (
@@ -25,7 +24,7 @@ const Header = props => {
     >
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg">
-          <Link href="/">Chakra UI</Link>
+          Chakra UI
         </Heading>
       </Flex>
 
@@ -45,34 +44,15 @@ const Header = props => {
         display={{ sm: show ? "block" : "none", md: "flex" }}
         width={{ sm: "full", md: "auto" }}
         alignItems="center"
-        flexGrow={1}
       >
-        <MenuItems>
-          <Link
-            href="/post/[...slug]"
-            as="/post/2020/first-post/with/catch/all/routes"
-          >
-            First Post
-          </Link>
-        </MenuItems>
-        <MenuItems>
-          <Link
-            href="/post/[...slug]"
-            as="/post/2020/second-post/with/catch/all/routes"
-          >
-            Second Post
-          </Link>
-        </MenuItems>
+        <MenuItems>Docs</MenuItems>
+        <MenuItems>Examples</MenuItems>
         <MenuItems>Blog</MenuItems>
-      </Box>
-
-      <Box
-        display={{ sm: show ? "block" : "none", md: "block" }}
-        mt={{ base: 4, md: 0 }}
-      >
-        <Button bg="transparent" border="1px">
-          Create account
-        </Button>
+        <MenuItems>
+          <Button bg="transparent" border="1px">
+            Create account
+          </Button>
+        </MenuItems>
       </Box>
     </Flex>
   );
