@@ -1,7 +1,8 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { Text } from "@chakra-ui/core";
 // components
-import Header from "../components/Header";
+import Header from "../src/components/header";
+import Container from "../src/components/container";
 
 export default function Home() {
   return (
@@ -11,10 +12,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header />
-        Main content
-      </main>
+      <Container>
+        <main>
+          <Header />
+          {Array(100)
+            .fill("")
+            .map((_, i) => (
+              <Text>Main content</Text>
+            ))}
+        </main>
+      </Container>
 
       <footer>Footer</footer>
     </div>

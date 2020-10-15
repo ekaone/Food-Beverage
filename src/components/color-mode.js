@@ -1,8 +1,9 @@
 import { useColorMode, Switch } from "@chakra-ui/core";
 
-export const NightModeSwitch = () => {
+export const ColorMode = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isNight = colorMode === "dark";
+
   return (
     <Switch
       position="fixed"
